@@ -1,0 +1,10 @@
+Package: MorphoMussel
+Title: An R package for analyzing mussel morphometrics
+Version: 0.0.0.9000
+Authors@R: 
+    person("Tom", "Dodson", , "thomas.dodson-2@selu.edu", role = c("aut", "cre"))
+Description: A package used for analyzing morphometrics of mussels. This includes t-test comparisons of excavated and non-excavated mussels, scatter plotting, and linear modeling of length~depth and width~depth analyses.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
