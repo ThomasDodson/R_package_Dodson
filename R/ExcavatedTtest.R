@@ -1,12 +1,16 @@
-#' Expected input: 
-#'   Data from the columns of both excavated and non-excavated mussels. 
+# Nonexcavated_mussels <- filter(SH16_Mussels, Excavated == "N") %>% 
+ # + select(Length)
 
-#' Expected output:
-#'   A dataframe of statistics related to the T-test (Test statistic, P value, and degrees of freedom).
-
-#' > Nonexcavated_mussels <- filter(SH16_Mussels, Excavated == "N") %>% 
-#' + select(Length)
-
-#' Excavated_mussels <- filter(SH16_Mussels, Excavated == "Y") %>% 
-#' + select(Length)
-#' t.test(Nonexcavated_mussels, Excavated_mussels)
+ #Excavated_mussels <- filter(SH16_Mussels, Excavated == "Y") %>% 
+ # + select(Length)
+ 
+#'  @param Nonexcavated_list A list of nonexcavated mussel metrics
+#' @param Excavated_list A list of excavated mussel variables
+#'  @return Dataframe A dataframe of the T-test model
+#'  @usage (Nonexcavated_list, Excavated_list)
+ 
+ ExcavatedTtest <- function(Nonexcavated_list, Excavated_list) {
+   Dataframe <- t.test(Nonexcavated_list, Excavated_list)
+   is.data.frame(Dataframe)
+   return(Dataframe)
+ }
