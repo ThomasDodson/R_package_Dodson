@@ -11,6 +11,8 @@
  
  ExcavatedTtest <- function(Nonexcavated_list, Excavated_list) {
    Dataframe <- t.test(Nonexcavated_list, Excavated_list)
-   is.data.frame(Dataframe)
+   if (is.data.frame(Nonexcavated_list) == FALSE){
+     return("This must be a dataframe")
+   }
    return(Dataframe)
  }

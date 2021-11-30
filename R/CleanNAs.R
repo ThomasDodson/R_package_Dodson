@@ -7,6 +7,7 @@
 
 CleanNAs <- function(Dataframe) {
   Dataframe <- drop_na(Dataframe)
-  is.data.frame(Dataframe)
-  return(Dataframe)
+  if (is.data.frame(Dataframe) == FALSE){
+    return("This must be a dataframe")
+  }
 }

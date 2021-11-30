@@ -15,7 +15,8 @@ ScatterPlotDepthLength <- function(Mussel_data, Depth_Variable, Length_Variable,
   enquo(Length_Variable)
   enquo(Mussel_data)
     Plot <- ggplot(Mussel_data, mapping= aes(x=Depth_Variable, y= Length_Variable)) + geom_point() + geom_smooth(method = "lm", color= "navy", size=0.5, fill="deeppink4") + labs(x="X_axis_label", y= "Y_axis_label", title= "Title")
-is.ggplot(Plot)
-return(Plot)
+    if (is.ggplot(Plot) == FALSE)
+      return("Error; plot not made")
+      return(Plot)
 }
 

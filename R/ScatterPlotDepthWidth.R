@@ -10,11 +10,12 @@
 #' @return A Plot
 #' @usage (Mussel_data, Depth_Variable, Width_variable, Y_axis_label, X_axis_label, Title)
 #' 
-ScatterPlotDepthLength <- function (Mussel_data, Depth_Variable, Width_Variable){
+ScatterPlotDepthWidth <- function (Mussel_data, Depth_Variable, Width_Variable){
   enquo(Depth_Variable)
   enquo(Width_Variable)
   enquo(Mussel_data)
   Plot <- ggplot(Mussel_data, mapping= aes(x=Depth_Variable, y= Width_Variable)) + geom_point() + geom_smooth(method = "lm", color= "navy", size=0.5, fill="deeppink4")
-  is.ggplot(Plot)
+  if (is.ggplot(Plot) == FALSE)
+    return("Error; plot not made")
   return(Plot)
 }
