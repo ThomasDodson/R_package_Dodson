@@ -101,9 +101,9 @@
 <pre><code><span class="co">## Using github PAT from envvar GITHUB_PAT</span></code></pre>
 <pre><code><span class="co">## Downloading GitHub repo ThomasDodson/R_package_Dodson@HEAD</span></code></pre>
 <pre><code>##   
-   checking for file ‘/tmp/RtmpkxBMOJ/remotes30d9215a7b90/ThomasDodson-R_package_Dodson-85e76ea/DESCRIPTION’ ...
+   checking for file ‘/tmp/RtmpNPc6zw/remotes33935223d7dc/ThomasDodson-R_package_Dodson-74afa5b/DESCRIPTION’ ...
   
- [32m✓ [39m   [38;5;247mchecking for file ‘/tmp/RtmpkxBMOJ/remotes30d9215a7b90/ThomasDodson-R_package_Dodson-85e76ea/DESCRIPTION’ [39m [36m [39m
+ [32m✓ [39m   [38;5;247mchecking for file ‘/tmp/RtmpNPc6zw/remotes33935223d7dc/ThomasDodson-R_package_Dodson-74afa5b/DESCRIPTION’ [39m [36m [39m
 ## 
   
  [38;5;247m─ [39m [38;5;247m   [39m [38;5;247mpreparing ‘MorphoMussel’: [39m [36m [39m
@@ -126,21 +126,22 @@
   
    
 ## </code></pre>
-<pre><code><span class="co">## Installing package into '/tmp/Rtmp0fWHqq/temp_libpath119688d39d5'</span>
+<pre><code><span class="co">## Installing package into '/tmp/Rtmp0fWHqq/temp_libpath119ccbe00'</span>
 <span class="co">## (as 'lib' is unspecified)</span></code></pre>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st">"MorphoMussel"</span><span class="op">)</span></code></pre></div>
 <p>Let us download some data for our package test:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span>url<span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ThomasDodson/R_package_Dodson/master/data/SH16_Mussels.csv"</span>, destfile <span class="op">=</span> <span class="st">"data/SH_Mussels.csv"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span>url<span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ThomasDodson/R_package_Dodson/master/data/SH16_Mussels.csv"</span>, destfile <span class="op">=</span> <span class="st">"data/SH_16Mussels.csv"</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## Warning in download.file(url = "https://raw.githubusercontent.com/</span>
 <span class="co">## ThomasDodson/R_package_Dodson/master/data/SH16_Mussels.csv", : URL https://</span>
 <span class="co">## raw.githubusercontent.com/ThomasDodson/R_package_Dodson/master/data/</span>
-<span class="co">## SH16_Mussels.csv: cannot open destfile 'data/SH_Mussels.csv', reason 'No such</span>
+<span class="co">## SH16_Mussels.csv: cannot open destfile 'data/SH_16Mussels.csv', reason 'No such</span>
 <span class="co">## file or directory'</span></code></pre>
 <pre><code><span class="co">## Warning in download.file(url = "https://raw.githubusercontent.com/ThomasDodson/</span>
 <span class="co">## R_package_Dodson/master/data/SH16_Mussels.csv", : download had nonzero exit</span>
 <span class="co">## status</span></code></pre>
+<p>Most analyses use dataframes. Read in and save SH16Mussels to a dataframe.</p>
 </div>
 <div class="section level2">
 <h2 id="scatterplotdepthlength">ScatterPlotDepthLength<a class="anchor" aria-label="anchor" href="#scatterplotdepthlength"></a>
