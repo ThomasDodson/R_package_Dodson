@@ -10,7 +10,7 @@
 #' @return A Plot
 #' @usage (Mussel_data, Depth_Variable, Length_Variable, X_label, Y_label, Title)
 
-ScatterPlotDepthLength <- function(Mussel_data, Depth_Variable, Length_Variable, X_axis_label, Y_axis_label, Title){
+ScatterPlotDepthLength <- function(Mussel_data, Depth_Variable, Length_Variable){
   enquo(Depth_Variable)
   enquo(Length_Variable)
   enquo(Mussel_data)

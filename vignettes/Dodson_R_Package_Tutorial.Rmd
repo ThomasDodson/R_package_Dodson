@@ -29,34 +29,115 @@ library("MorphoMussel")
 Let us download some data for our package test:
 
 ```{r}
-#' download.file()
+download.file(url= "https://raw.githubusercontent.com/ThomasDodson/R_package_Dodson/master/data/SH16_Mussels.csv", destfile = "data/SH_Mussels.csv")
 ```
 
 
-## Working Example
+## ScatterPlotDepthLength
 
-+ An example of each function and how it works
-+ Say something about why this is a good thing to do
-+ Say something about expected output
+ScatterPlotDepthLength takes in Depth and Length variables of mussels from a dataframe and plots a scatter plot with a linear model. Example: ScatterPlotDepthLength(Mussel_data, Depth Variable, Length Variable)
+For the test data Mussel_data is the source data (SH16_Mussels), SH16_Mussels$Depth is the depth variable, and SH16_Mussels$Length is the length variable.  
+
+Plotting depth and length of mussels and analyzing the model visually allows for better understanding of the relationship between the variables. This can be used for for a variety of purposes including quantifying this relationship in different age classes of mussels and quantifying expected normal (healthy) relationships between depth and length. For example, you may expect unhealthy mussels to develop less depth in their shell. In addition, female mussels increase shell depth when gravid so examining this relationship compared to length can be used to determine what you'd expect for normal (non-gravid) depth to length ratios and outliers (gravid mussels).
+
+The output should be a scatterplot with a linear model plotted. 
+```{r}
+ScatterPlotDepthLength <- function(Mussel_data, Depth_Variable, Length_Variable){
+  enquo(Depth_Variable)
+  enquo(Length_Variable)
+  enquo(Mussel_data)
+    Plot <- ggplot(Mussel_data, mapping= aes(x=Depth_Variable, y= Length_Variable)) + geom_point() + geom_smooth(method = "lm", color= "navy", size=0.5, fill="deeppink4") + labs(x="X_axis_label", y= "Y_axis_label", title= "Title")
+    if (is.ggplot(Plot) == FALSE)
+      return("Error; plot not made")
+      return(Plot)
+}
+```
+
+## ScatterPlotDepthWidth
+
+ScatterPlotDepthWidth, like ScatterPlotDepthLength, takes in variables (depth and width in this case) of mussels from a dataframe and plots a scatter plot with a linear model. Example: ScatterPlotDepthwidth(Mussel_data, Depth Variable, Width Variable)
+For the test data Mussel_data is the source data (SH16_Mussels), SH16_Mussels$Depth is the depth variable, and SH16_Mussels$Width is the width variable.  
+
+Plotting depth and width of mussels and analyzing the model visually allows for better understanding of the relationship between the variables. This can be used for for a variety of purposes including quantifying this relationship in different age classes of mussels and quantifying expected normal (healthy) relationships between depth and width For example, you may expect unhealthy mussels to develop less depth in their shell. In addition, female mussels increase shell depth when gravid so examining this relationship compared to width can be used to determine what you'd expect for normal (non-gravid) depth to width ratios and outliers (gravid mussels).
+
+The output should be a scatterplot with a linear model plotted.
 
 ```{r}
-#' result <- mult(4, 5)
+ScatterPlotDepthWidth <- function (Mussel_data, Depth_Variable, Width_Variable){
+  enquo(Depth_Variable)
+  enquo(Width_Variable)
+  enquo(Mussel_data)
+  Plot <- ggplot(Mussel_data, mapping= aes(x=Depth_Variable, y= Width_Variable)) + geom_point() + geom_smooth(method = "lm", color= "navy", size=0.5, fill="deeppink4")
+  if (is.ggplot(Plot) == FALSE)
+    return("Error; plot not made")
+  return(Plot)
+}
+```
+## LinearModelWidth 
+LinearModelWidth takes in a dataframe of mussel metrics and 2 variables from within the dataframe, one of which is meant to be width. It then generates a linear model for analysis.
+
+Example: LinearModelWidth(Mussel_data, Mussel_data$Variable_1, Mussel_data$Variable_2)
+
+Example with test data examining variables width and depth:
+LinearModelWidth(SH16_Mussels, SH16_Mussels$Width, SH16_Mussels$Depth)
+
+The importance of these variables is explained in the scatter plot explanations. However, the exact statistical information is important for examining the robustness of analysis so this will give you all necessary statistical information on the linear model. 
+
+Output is the statistical analyses of the linear model. 
+
+```{r}
+LinearModelLength <- function(Mussel_data, Variable_1, Variable_2) {
+   if (is.data.frame(LinearModelLength) == TRUE){
+     return("This can not be a dataframe")
+   }
+   LinearModel <- lm(Variable_1 ~ Variable_2, data=Mussel_data)
+    return(LinearModel)
+  }
 ```
 
+## CleanNAs
 
+CleanNAs is a function designed to ensure all NAs are dropped from a dataset to ensure proper use of the package. 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Example: CleanNAs(dataframe)
+Where the dataframe in the test is SH16_Mussels.
 
-```{r cars}
-summary(cars)
+NAs can cause some functions to work improperly so it is important to remove them before analysis. 
+
+Output is a dataframe (free of NAs).
+
+```{r}
+CleanNAs <- function(Dataframe) {
+  Dataframe <- drop_na(Dataframe)
+  if (is.data.frame(Dataframe) == FALSE){
+    return("This must be a dataframe")
+  }
+}
 ```
 
-## Including Plots
+## ExcavatedTtest
 
-You can also embed plots, for example:
+Excavated Ttest is a function that takes in 2 separate lists of variables and runs a student's T-test for statistical significance. In this case it was designed to examine statistical significane between sizes of excavated (buried) and non-excavated (surface) mussel individuals. 
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+Example: ExcavatedTtest(Nonexcavated_list, Excavated_list) where Nonexcavated mussels is a list of mussel lengths of nonexcavated mussels and Excavated mussels is a list of lengths of excavated mussels. 
+
+Note that for the test data, two separate lists must be created through filters. 
+Example:
+Nonexcavated_mussels <- filter(SH16_Mussels, Excavated == "N") %>% 
+ + select(Length)
+ 
+Excavated_mussels <- filter(SH16_Mussels, Excavated == "Y") %>% 
+ + select(Length)
+ 
+Output is the result of the Student's T-test. 
+
+```{r}
+ ExcavatedTtest <- function(Nonexcavated_list, Excavated_list) {
+   Dataframe <- t.test(Nonexcavated_list, Excavated_list)
+   if (is.data.frame(Nonexcavated_list) == FALSE){
+     return("This must be a dataframe")
+   }
+   return(Dataframe)
+ }
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
