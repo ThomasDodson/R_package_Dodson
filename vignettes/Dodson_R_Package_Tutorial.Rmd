@@ -29,9 +29,9 @@ library("MorphoMussel")
 Let us download some data for our package test:
 
 ```{r}
-download.file(url= "https://raw.githubusercontent.com/ThomasDodson/R_package_Dodson/master/data/SH16_Mussels.csv", destfile = "data/SH_Mussels.csv")
+download.file(url= "https://raw.githubusercontent.com/ThomasDodson/R_package_Dodson/master/data/SH16_Mussels.csv", destfile = "data/SH_16Mussels.csv")
 ```
-
+Most analyses use dataframes. Read in and save SH16Mussels to a dataframe.
 
 ## ScatterPlotDepthLength
 
