@@ -1,0 +1,62 @@
+---
+title: "Dodson_R_Package"
+author: "Tom Dodson"
+date: "12/2/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Installation
+
+Load in common libraries used by this package.
+
+```{r}
+library(ggplot2)
+library(tidyverse)
+```
+
+Now, we install my R package:
+
+```{r}
+devtools::install_github("ThomasDodson/R_package_Dodson")
+library("MorphoMussel")
+```
+
+
+Let us download some data for our package test:
+
+```{r}
+#' download.file()
+```
+
+
+## Working Example
+
++ An example of each function and how it works
++ Say something about why this is a good thing to do
++ Say something about expected output
+
+```{r}
+#' result <- mult(4, 5)
+```
+
+
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
