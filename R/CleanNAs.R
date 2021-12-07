@@ -4,6 +4,7 @@
 #' @param Dataframe A dataframe  
 #' @return Dataframe
 #' @Usage (Dataframe)
+#' @export
 
 CleanNAs <- function(Dataframe) {
   Dataframe <- drop_na(Dataframe)

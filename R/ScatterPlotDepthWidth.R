@@ -9,7 +9,8 @@
 #' @param Title A Title text
 #' @return A Plot
 #' @usage (Mussel_data, Depth_Variable, Width_variable, Y_axis_label, X_axis_label, Title)
-#' 
+#' @export
+
 ScatterPlotDepthWidth <- function (Mussel_data, Depth_Variable, Width_Variable){
   enquo(Depth_Variable)
   enquo(Width_Variable)
