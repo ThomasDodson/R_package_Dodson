@@ -7,7 +7,6 @@
 #' @param Nonexcavated_list A list of nonexcavated mussel metrics
 #' @param Excavated_list A list of excavated mussel variables
 #'  @return Dataframe A dataframe of the T-test model
-#'  @usage (Nonexcavated_list, Excavated_list)
 #' @export  
 
  ExcavatedTtest <- function(Nonexcavated_list, Excavated_list) {

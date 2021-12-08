@@ -5,7 +5,6 @@
 #' @param Variable_1 A column of data within mussel data (ie. Mussel_data$variable_1)
 #' @param Variable_2 A column of data within mussel data (ie. Mussel_data$variable_2)
 #' @return A Linear Model
-#' @usage (Mussel_data, Mussel_data$Variable_1, Mussel_data$Variable_2)
 #' @export
  
 LinearModelLength <- function(Mussel_data, Variable_1, Variable_2) {

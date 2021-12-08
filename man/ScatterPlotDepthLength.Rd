@@ -4,7 +4,7 @@
 \alias{ScatterPlotDepthLength}
 \title{Make a plot based on depth and length of mussels.}
 \usage{
-(Mussel_data, Depth_Variable, Length_Variable, X_label, Y_label, Title)
+ScatterPlotDepthLength(Mussel_data, Depth_Variable, Length_Variable)
 }
 \arguments{
 \item{Mussel_data}{A dataframe of mussel metrics}

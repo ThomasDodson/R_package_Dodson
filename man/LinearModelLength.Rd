@@ -4,7 +4,7 @@
 \alias{LinearModelLength}
 \title{Create a linear model based on length and width from dataframe}
 \usage{
-(Mussel_data, Mussel_data$Variable_1, Mussel_data$Variable_2)
+LinearModelLength(Mussel_data, Variable_1, Variable_2)
 }
 \arguments{
 \item{Mussel_data}{A dataframe of mussel data}

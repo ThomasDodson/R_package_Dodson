@@ -8,7 +8,6 @@
 #' @param Y_axis_label A label text for the y_axis
 #' @param Title A Title text
 #' @return A Plot
-#' @usage (Mussel_data, Depth_Variable, Length_Variable, X_label, Y_label, Title)
 #' @export 
 
 ScatterPlotDepthLength <- function(Mussel_data, Depth_Variable, Length_Variable){

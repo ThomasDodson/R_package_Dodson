@@ -10,8 +10,7 @@ ExcavatedTtest(Nonexcavated_list, Excavated_list)
 \item{Nonexcavated_list}{A list of nonexcavated mussel metrics}
 
 \item{Excavated_list}{A list of excavated mussel variables
-@return Dataframe A dataframe of the T-test model
-@usage (Nonexcavated_list, Excavated_list)}
+@return Dataframe A dataframe of the T-test model}
 }
 \description{
 Run a T-test on excavated and non-excavated mussels Note: filter out the non-excavated and excavated dataframes. # Nonexcavated_mussels <- filter(SH16_Mussels, Excavated == "N") \%>\%
