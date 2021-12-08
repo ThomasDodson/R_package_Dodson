@@ -73,13 +73,13 @@ ScatterPlotDepthWidth <- function (Mussel_data, Depth_Variable, Width_Variable){
   return(Plot)
 }
 ```
-## LinearModelWidth 
-LinearModelWidth takes in a dataframe of mussel metrics and 2 variables from within the dataframe, one of which is meant to be width. It then generates a linear model for analysis.
+## LinearModelLength
+LinearModelLength takes in a dataframe of mussel metrics and 2 variables from within the dataframe, one of which is meant to be length. It then generates a linear model for analysis.
 
-#' Example: LinearModelWidth(Mussel_data, Mussel_data$Variable_1, Mussel_data$Variable_2)
+#' Example: LinearModelLength(Mussel_data, Mussel_data$Variable_1, Mussel_data$Variable_2)
 
 #' Example with test data examining variables width and depth:
-#' LinearModelWidth(SH16_Mussels, SH16_Mussels$Width, SH16_Mussels$Depth)
+#' LinearModelLength(SH16_Mussels, SH16_Mussels$Length, SH16_Mussels$Depth)
 
 The importance of these variables is explained in the scatter plot explanations. However, the exact statistical information is important for examining the robustness of analysis so this will give you all necessary statistical information on the linear model. 
 
