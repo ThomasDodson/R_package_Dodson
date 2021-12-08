@@ -101,9 +101,9 @@
 <pre><code><span class="co">## Using github PAT from envvar GITHUB_PAT</span></code></pre>
 <pre><code><span class="co">## Downloading GitHub repo ThomasDodson/R_package_Dodson@HEAD</span></code></pre>
 <pre><code>##   
-   checking for file ‘/tmp/Rtmpe0Qr1u/remotes70b17641ac/ThomasDodson-R_package_Dodson-e385b3c/DESCRIPTION’ ...
+   checking for file ‘/tmp/RtmpTsjfck/remotes2e63f6f970b/ThomasDodson-R_package_Dodson-da969ed/DESCRIPTION’ ...
   
- [32m✓ [39m   [38;5;247mchecking for file ‘/tmp/Rtmpe0Qr1u/remotes70b17641ac/ThomasDodson-R_package_Dodson-e385b3c/DESCRIPTION’ [39m [36m [39m
+ [32m✓ [39m   [38;5;247mchecking for file ‘/tmp/RtmpTsjfck/remotes2e63f6f970b/ThomasDodson-R_package_Dodson-da969ed/DESCRIPTION’ [39m [36m [39m
 ## 
   
  [38;5;247m─ [39m [38;5;247m   [39m [38;5;247mpreparing ‘MorphoMussel’: [39m [36m [39m
@@ -126,7 +126,7 @@
   
    
 ## </code></pre>
-<pre><code><span class="co">## Installing package into '/tmp/RtmpbdhyP8/temp_libpath5f0708435e'</span>
+<pre><code><span class="co">## Installing package into '/tmp/RtmpDgDDmt/temp_libpath11925c98bfe'</span>
 <span class="co">## (as 'lib' is unspecified)</span></code></pre>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st">"MorphoMussel"</span><span class="op">)</span></code></pre></div>
@@ -142,6 +142,16 @@
 <span class="co">## R_package_Dodson/master/data/SH16_Mussels.csv", : download had nonzero exit</span>
 <span class="co">## status</span></code></pre>
 <p>Most analyses use dataframes. Read in and save SH16Mussels to a dataframe.</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">SH16_Mussels</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv</a></span><span class="op">(</span><span class="st">"/cloud/project/data/SH16_Mussels.csv"</span><span class="op">)</span></code></pre></div>
+<pre><code><span class="co">## <span style="font-weight: bold;">Rows: </span><span style="color: #0000BB;">740</span> <span style="font-weight: bold;">Columns: </span><span style="color: #0000BB;">8</span></span></code></pre>
+<pre><code><span class="co">## <span style="color: #00BBBB;">──</span> <span style="font-weight: bold;">Column specification</span> <span style="color: #00BBBB;">────────────────────────────────────────────────────────</span></span>
+<span class="co">## <span style="font-weight: bold;">Delimiter:</span> ","</span>
+<span class="co">## <span style="color: #BB0000;">chr</span> (2): Species, Excavated</span>
+<span class="co">## <span style="color: #00BB00;">dbl</span> (6): Quadrat (L), Quadrat (W), Length, Width, Depth, Year</span></code></pre>
+<pre><code><span class="co">## </span>
+<span class="co">## <span style="color: #00BBBB;">ℹ</span> Use <span style="color: #262626; background-color: #DADADA;">`spec()`</span> to retrieve the full column specification for this data.</span>
+<span class="co">## <span style="color: #00BBBB;">ℹ</span> Specify the column types or set <span style="color: #262626; background-color: #DADADA;">`show_col_types = FALSE`</span> to quiet this message.</span></code></pre>
 </div>
 <div class="section level2">
 <h2 id="scatterplotdepthlength">ScatterPlotDepthLength<a class="anchor" aria-label="anchor" href="#scatterplotdepthlength"></a>
@@ -149,7 +159,7 @@
 <p>#’ ScatterPlotDepthLength takes in Depth and Length variables of mussels from a dataframe and plots a scatter plot with a linear model. Example: ScatterPlotDepthLength(Mussel_data, Depth Variable, Length Variable) #’ For the test data Mussel_data is the source data (SH16_Mussels), SH16_Mussels<span class="math inline">\(Depth is the depth variable, and SH16_Mussels\)</span>Length is the length variable.</p>
 <p>Plotting depth and length of mussels and analyzing the model visually allows for better understanding of the relationship between the variables. This can be used for for a variety of purposes including quantifying this relationship in different age classes of mussels and quantifying expected normal (healthy) relationships between depth and length. For example, you may expect unhealthy mussels to develop less depth in their shell. In addition, female mussels increase shell depth when gravid so examining this relationship compared to length can be used to determine what you’d expect for normal (non-gravid) depth to length ratios and outliers (gravid mussels).</p>
 <p>The output should be a scatterplot with a linear model plotted.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ScatterPlotDepthLength</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">Mussel_data</span>, <span class="va">Depth_Variable</span>, <span class="va">Length_Variable</span><span class="op">)</span><span class="op">{</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/tidyeval.html" class="external-link">enquo</a></span><span class="op">(</span><span class="va">Depth_Variable</span><span class="op">)</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/tidyeval.html" class="external-link">enquo</a></span><span class="op">(</span><span class="va">Length_Variable</span><span class="op">)</span>
@@ -166,7 +176,7 @@
 <p>#’ ScatterPlotDepthWidth, like ScatterPlotDepthLength, takes in variables (depth and width in this case) of mussels from a dataframe and plots a scatter plot with a linear model. Example: ScatterPlotDepthwidth(Mussel_data, Depth Variable, Width Variable) #’ For the test data Mussel_data is the source data (SH16_Mussels), SH16_Mussels<span class="math inline">\(Depth is the depth variable, and SH16_Mussels\)</span>Width is the width variable.</p>
 <p>Plotting depth and width of mussels and analyzing the model visually allows for better understanding of the relationship between the variables. This can be used for for a variety of purposes including quantifying this relationship in different age classes of mussels and quantifying expected normal (healthy) relationships between depth and width For example, you may expect unhealthy mussels to develop less depth in their shell. In addition, female mussels increase shell depth when gravid so examining this relationship compared to width can be used to determine what you’d expect for normal (non-gravid) depth to width ratios and outliers (gravid mussels).</p>
 <p>The output should be a scatterplot with a linear model plotted.</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ScatterPlotDepthWidth</span> <span class="op">&lt;-</span> <span class="kw">function</span> <span class="op">(</span><span class="va">Mussel_data</span>, <span class="va">Depth_Variable</span>, <span class="va">Width_Variable</span><span class="op">)</span><span class="op">{</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/tidyeval.html" class="external-link">enquo</a></span><span class="op">(</span><span class="va">Depth_Variable</span><span class="op">)</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/tidyeval.html" class="external-link">enquo</a></span><span class="op">(</span><span class="va">Width_Variable</span><span class="op">)</span>
@@ -185,7 +195,7 @@
 <p>#’ Example with test data examining variables width and depth: #’ LinearModelLength(SH16_Mussels, SH16_Mussels<span class="math inline">\(Length, SH16_Mussels\)</span>Depth)</p>
 <p>The importance of these variables is explained in the scatter plot explanations. However, the exact statistical information is important for examining the robustness of analysis so this will give you all necessary statistical information on the linear model.</p>
 <p>Output is the statistical analyses of the linear model.</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">LinearModelLength</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">Mussel_data</span>, <span class="va">Variable_1</span>, <span class="va">Variable_2</span><span class="op">)</span> <span class="op">{</span>
    <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">is.data.frame</a></span><span class="op">(</span><span class="va">LinearModelLength</span><span class="op">)</span> <span class="op">==</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">{</span>
      <span class="kw"><a href="https://rdrr.io/r/base/function.html" class="external-link">return</a></span><span class="op">(</span><span class="st">"This can not be a dataframe"</span><span class="op">)</span>
@@ -201,7 +211,7 @@
 <p>Example: CleanNAs(dataframe) Where the dataframe in the test is SH16_Mussels.</p>
 <p>NAs can cause some functions to work improperly so it is important to remove them before analysis.</p>
 <p>Output is a dataframe (free of NAs).</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">CleanNAs</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">Dataframe</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">Dataframe</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html" class="external-link">drop_na</a></span><span class="op">(</span><span class="va">Dataframe</span><span class="op">)</span>
   <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">is.data.frame</a></span><span class="op">(</span><span class="va">Dataframe</span><span class="op">)</span> <span class="op">==</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">{</span>
@@ -217,7 +227,7 @@
 <p>Note that for the test data, two separate lists must be created through filters. Example: Nonexcavated_mussels &lt;- filter(SH16_Mussels, Excavated == “N”) %&gt;% + select(Length)</p>
 <p>Excavated_mussels &lt;- filter(SH16_Mussels, Excavated == “Y”) %&gt;% + select(Length)</p>
 <p>Output is the result of the Student’s T-test.</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"> <span class="va">ExcavatedTtest</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">Nonexcavated_list</span>, <span class="va">Excavated_list</span><span class="op">)</span> <span class="op">{</span>
    <span class="va">Dataframe</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/t.test.html" class="external-link">t.test</a></span><span class="op">(</span><span class="va">Nonexcavated_list</span>, <span class="va">Excavated_list</span><span class="op">)</span>
    <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">is.data.frame</a></span><span class="op">(</span><span class="va">Nonexcavated_list</span><span class="op">)</span> <span class="op">==</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">{</span>
