@@ -33,6 +33,11 @@ download.file(url= "https://raw.githubusercontent.com/ThomasDodson/R_package_Dod
 ```
 Most analyses use dataframes. Read in and save SH16Mussels to a dataframe.
 
+```{r}
+SH16_Mussels <- read_csv("/cloud/project/data/SH16_Mussels.csv")
+
+```
+
 ## ScatterPlotDepthLength
 
 #' ScatterPlotDepthLength takes in Depth and Length variables of mussels from a dataframe and plots a scatter plot with a linear model. Example: ScatterPlotDepthLength(Mussel_data, Depth Variable, Length Variable)
