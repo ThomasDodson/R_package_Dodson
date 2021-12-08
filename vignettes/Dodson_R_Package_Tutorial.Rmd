@@ -35,8 +35,8 @@ Most analyses use dataframes. Read in and save SH16Mussels to a dataframe.
 
 ## ScatterPlotDepthLength
 
-ScatterPlotDepthLength takes in Depth and Length variables of mussels from a dataframe and plots a scatter plot with a linear model. Example: ScatterPlotDepthLength(Mussel_data, Depth Variable, Length Variable)
-For the test data Mussel_data is the source data (SH16_Mussels), SH16_Mussels$Depth is the depth variable, and SH16_Mussels$Length is the length variable.  
+#' ScatterPlotDepthLength takes in Depth and Length variables of mussels from a dataframe and plots a scatter plot with a linear model. Example: ScatterPlotDepthLength(Mussel_data, Depth Variable, Length Variable)
+#' For the test data Mussel_data is the source data (SH16_Mussels), SH16_Mussels$Depth is the depth variable, and SH16_Mussels$Length is the length variable.  
 
 Plotting depth and length of mussels and analyzing the model visually allows for better understanding of the relationship between the variables. This can be used for for a variety of purposes including quantifying this relationship in different age classes of mussels and quantifying expected normal (healthy) relationships between depth and length. For example, you may expect unhealthy mussels to develop less depth in their shell. In addition, female mussels increase shell depth when gravid so examining this relationship compared to length can be used to determine what you'd expect for normal (non-gravid) depth to length ratios and outliers (gravid mussels).
 
@@ -55,8 +55,8 @@ ScatterPlotDepthLength <- function(Mussel_data, Depth_Variable, Length_Variable)
 
 ## ScatterPlotDepthWidth
 
-ScatterPlotDepthWidth, like ScatterPlotDepthLength, takes in variables (depth and width in this case) of mussels from a dataframe and plots a scatter plot with a linear model. Example: ScatterPlotDepthwidth(Mussel_data, Depth Variable, Width Variable)
-For the test data Mussel_data is the source data (SH16_Mussels), SH16_Mussels$Depth is the depth variable, and SH16_Mussels$Width is the width variable.  
+#' ScatterPlotDepthWidth, like ScatterPlotDepthLength, takes in variables (depth and width in this case) of mussels from a dataframe and plots a scatter plot with a linear model. Example: ScatterPlotDepthwidth(Mussel_data, Depth Variable, Width Variable)
+#' For the test data Mussel_data is the source data (SH16_Mussels), SH16_Mussels$Depth is the depth variable, and SH16_Mussels$Width is the width variable.  
 
 Plotting depth and width of mussels and analyzing the model visually allows for better understanding of the relationship between the variables. This can be used for for a variety of purposes including quantifying this relationship in different age classes of mussels and quantifying expected normal (healthy) relationships between depth and width For example, you may expect unhealthy mussels to develop less depth in their shell. In addition, female mussels increase shell depth when gravid so examining this relationship compared to width can be used to determine what you'd expect for normal (non-gravid) depth to width ratios and outliers (gravid mussels).
 
@@ -76,10 +76,10 @@ ScatterPlotDepthWidth <- function (Mussel_data, Depth_Variable, Width_Variable){
 ## LinearModelWidth 
 LinearModelWidth takes in a dataframe of mussel metrics and 2 variables from within the dataframe, one of which is meant to be width. It then generates a linear model for analysis.
 
-Example: LinearModelWidth(Mussel_data, Mussel_data$Variable_1, Mussel_data$Variable_2)
+#' Example: LinearModelWidth(Mussel_data, Mussel_data$Variable_1, Mussel_data$Variable_2)
 
-Example with test data examining variables width and depth:
-LinearModelWidth(SH16_Mussels, SH16_Mussels$Width, SH16_Mussels$Depth)
+#' Example with test data examining variables width and depth:
+#' LinearModelWidth(SH16_Mussels, SH16_Mussels$Width, SH16_Mussels$Depth)
 
 The importance of these variables is explained in the scatter plot explanations. However, the exact statistical information is important for examining the robustness of analysis so this will give you all necessary statistical information on the linear model. 
 
