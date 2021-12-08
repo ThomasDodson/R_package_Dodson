@@ -1,9 +1,7 @@
-
-# drop_na(SH16_Mussels)
-
+#' Removes NAs from assorted dataframes
+#'
 #' @param Dataframe A dataframe  
 #' @return Dataframe
-#' @Usage (Dataframe)
 #' @export
 
 CleanNAs <- function(Dataframe) {

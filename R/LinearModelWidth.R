@@ -1,5 +1,6 @@
-# LinearModelLength <- lm(Width ~ Depth, data=SH16_Mussels)
-
+#' Create a linear model based on length and width from dataframe
+#'
+#'
 #' @param Mussel_data A dataframe of mussel data
 #' @param Variable_1 A column of data within mussel data (ie. Mussel_data$variable_1)
 #' @param Variable_2 A column of data within mussel data (ie. Mussel_data$variable_2)

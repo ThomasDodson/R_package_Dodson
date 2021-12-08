@@ -1,10 +1,10 @@
-# Nonexcavated_mussels <- filter(SH16_Mussels, Excavated == "N") %>% 
- # + select(Length)
-
- #Excavated_mussels <- filter(SH16_Mussels, Excavated == "Y") %>% 
- # + select(Length)
- 
-#'  @param Nonexcavated_list A list of nonexcavated mussel metrics
+#' Run a T-test on excavated and non-excavated mussels Note: filter out the non-excavated and excavated dataframes. # Nonexcavated_mussels <- filter(SH16_Mussels, Excavated == "N") %>% 
+# + select(Length)
+#Excavated_mussels <- filter(SH16_Mussels, Excavated == "Y") %>% 
+# + select(Length)
+#'
+#'
+#' @param Nonexcavated_list A list of nonexcavated mussel metrics
 #' @param Excavated_list A list of excavated mussel variables
 #'  @return Dataframe A dataframe of the T-test model
 #'  @usage (Nonexcavated_list, Excavated_list)

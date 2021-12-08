@@ -1,6 +1,6 @@
-# ggplot(SH16_Mussels, mapping= aes(x=Depth, y= Length)) + geom_point() +geom_smooth(method = "lm", color= "navy", size=0.5, fill="deeppink4") + labs(x="Mussel Depth (cm)", y= "Mussel Length (cm)", title= "Linear Model of Mussel Depth and Mussel Length")
-
-
+#' Make a plot based on depth and length of mussels.
+#'
+#'
 #' @param Mussel_data A dataframe of mussel metrics
 #' @param Depth_variable A subsetted column of depth variables
 #' @param Length_variable A subsetted column of length variables
